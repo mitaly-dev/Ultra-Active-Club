@@ -4,6 +4,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faHandHoldingHeart} from '@fortawesome/free-solid-svg-icons'
 import Profile from '../Profile/Profile';
 import Details from '../Details/Details';
+import Swal from 'sweetalert2'
 
 
 
@@ -12,25 +13,47 @@ const Main = () => {
     let [totalTime,setTotalTime]=useState([])
     let [addBreak,setAddBreak]=useState(0)
 
+
     useEffect(()=>{
         fetch('activities.json')
         .then(res=>res.json())
         .then(data=>setActivities(data))
     },[])
 
+
+    //break time set from localstorage
+    useEffect(()=>{
+        let breakTime=JSON.parse(localStorage.getItem('Break_time'))
+        setAddBreak(breakTime)
+    },[])
+
+
+    // add to list button handler
     const addToList=(activity)=>{
         setTotalTime([...totalTime,activity])
     }
 
+    //handle break time button
     const handleBreak=(event)=>{
-        setAddBreak(event.target.innerText)
+        let newBreak=event.target.innerText
+        setAddBreak(newBreak)
+        localStorage.setItem('Break_time',JSON.stringify(newBreak))
+       
         event.target.className='bg-[#5D5FEF] text-white rounded-full p-3 py-2'
-       setTimeout(() => {
+        setTimeout(() => {
         event.target.className='bg-white rounded-full p-3 py-2'
        }, 500);
     }
 
     
+    //activity completed button
+    const addToast=()=>{
+        Swal.fire(
+            'Activity Completed!',
+            'You clicked the button!',
+            'success'
+          )
+    }
 
  
     return (

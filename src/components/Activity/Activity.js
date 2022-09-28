@@ -10,7 +10,7 @@ let {age,description,picture,time,title}=activity
         <div className="card-body py-0 px-4">
             <h2 className="card-title">{title}</h2>
             <p>{description.length>50?description.slice(0,50):description}</p>
-            <p>Time Required: {time} </p>
+            <p>Time Required: {time} Min</p>
             <div className="card-actions justify-end">
             <button onClick={()=>addToList(activity.time)} className="w-full rounded-lg py-2 text-white bg-[#5D5FEF] border-none ">Add to list</button>
             </div>
