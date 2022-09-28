@@ -9,7 +9,7 @@ import Details from '../Details/Details';
 
 const Main = () => {
     let [activities,setActivities] = useState([])
-    let [addActivity,setAddActivity]=useState([])
+    let [totalTime,setTotalTime]=useState([])
     let [addBreak,setAddBreak]=useState(0)
 
     useEffect(()=>{
@@ -19,12 +19,18 @@ const Main = () => {
     },[])
 
     const addToList=(activity)=>{
-        setAddActivity([...addActivity,activity])
+        setTotalTime([...totalTime,activity])
     }
 
     const handleBreak=(event)=>{
         setAddBreak(event.target.innerText)
+        event.target.className='bg-[#5D5FEF] text-white rounded-full p-3 py-2'
+       setTimeout(() => {
+        event.target.className='bg-white rounded-full p-3 py-2'
+       }, 500);
     }
+
+    
 
  
     return (
@@ -52,8 +58,9 @@ const Main = () => {
                    <button className='bg-white rounded-full p-3 py-2'>40</button>
                    <button className='bg-white rounded-full p-3 py-2'>50</button>
                 </div>
-                <h3 className='font-semibold text-xl'>Tree Planting Details</h3>
-                <Details></Details>
+                <h3 className='font-semibold text-xl pt-3'>Tree Planting Details</h3>
+                <Details addBreak={addBreak} totalTime={totalTime}></Details>
+                <button onClick={addToast} className="w-full rounded-lg py-3 text-white bg-[#5D5FEF] border-none mt-4">Activity Completed</button>
                </div>
             </div>
         </div>
