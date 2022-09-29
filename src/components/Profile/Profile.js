@@ -16,7 +16,7 @@ const Profile = () => {
                         </div>
                     </div>
                 </div>
-                <div className='flex justify-between bg-[#F2F4FA] px-5 py-3 rounded-lg my-8'>
+                <div className='shadow-md flex justify-between bg-[#F2F4FA] px-5 py-3 rounded-lg my-8'>
                     <div className='text-center text-slate-500'>
                         <span className='text-2xl font-semibold text-black'>52</span><small>kg</small>
                         <p>Weight</p>
