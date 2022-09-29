@@ -5,6 +5,7 @@ import { faHandHoldingHeart} from '@fortawesome/free-solid-svg-icons'
 import Profile from '../Profile/Profile';
 import Details from '../Details/Details';
 import Swal from 'sweetalert2'
+import Blog from '../Blog/Blog';
 
 
 
@@ -61,6 +62,7 @@ const Main = () => {
 
  
     return (
+        <div>
         <div className='sm:grid grid-cols-8'>
             <div className='sm:col-span-4 md:col-span-5 lg:col-span-6 px-6 md:px-8 py-10 md:py-20 bg-[#F2F4FA]'>
                 <div className='flex text-xl sm:text-2xl text-[#5D5FEF] pb-6'>
@@ -90,6 +92,8 @@ const Main = () => {
                 <button onClick={addToast} className="w-full rounded-lg py-3 font-semibold text-white bg-[#5D5FEF] border-none mt-4">Activity Completed</button>
                </div>
             </div>
+        </div>
+        <Blog></Blog>
         </div>
     );
 };
