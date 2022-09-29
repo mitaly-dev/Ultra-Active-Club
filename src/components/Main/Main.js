@@ -7,7 +7,6 @@ import Details from '../Details/Details';
 import Swal from 'sweetalert2'
 
 
-
 const Main = () => {
     let [activities,setActivities] = useState([])
     let [totalTime,setTotalTime]=useState([])
@@ -57,21 +56,21 @@ const Main = () => {
 
  
     return (
-        <div className='grid grid-cols-8'>
+        <div className='md:grid grid-cols-8'>
             <div className='col-span-6 px-16 py-20 bg-[#F2F4FA]'>
                 <div className='flex text-2xl text-[#5D5FEF] pb-6'>
                     <FontAwesomeIcon icon={faHandHoldingHeart}></FontAwesomeIcon>
-                <h3 className='pl-3 uppercase font-medium'>ultra-active-club</h3>
+                <h3 className='pl-3 uppercase font-medium'>Plant for the Planet</h3>
                 </div>
-                <p className='text-xl font-medium pb-6'>Select today's tree planting</p>
-             <div className='grid grid-cols-3 gap-5'>
+                <p className='text-xl font-medium pb-6'>Select today's tree</p>
+             <div className='md:grid grid-cols-3 gap-5'>
              {
                 activities.map(activity=><Activity activity={activity} key={activity.id} addToList={addToList}></Activity>)
              }
              </div>
             </div>
             <div className='col-span-2'>
-               <div className=' bg-white px-6 py-10 sticky top-0'>
+               <div className=' bg-white px-20 md:px-6 py-10 sticky top-0'>
                <Profile></Profile>
                <h3 className='font-semibold text-xl'>Add A Break</h3>
                 <div onClick={(e)=>handleBreak(e)} className='flex justify-between bg-[#F2F4FA] px-5 py-3 rounded-lg my-5 font-semibold'>
