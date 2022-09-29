@@ -5,6 +5,8 @@ import Swal from 'sweetalert2'
 import profileImg from '../../images/profile.jpg'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import {  faLocation} from '@fortawesome/free-solid-svg-icons'
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 const Details = ({totalTime}) => {
     let [addBreak,setAddBreak]=useState(0)
@@ -16,7 +18,6 @@ const Details = ({totalTime}) => {
         localStorage.setItem('break_time',JSON.stringify(newBreak))
     }
 
-
     //break time set in display from localstorage
     useEffect(()=>{
         let breakTime=JSON.parse(localStorage.getItem('break_time'))
@@ -25,11 +26,7 @@ const Details = ({totalTime}) => {
 
      //activity completed button
      const addToast=()=>{
-        Swal.fire(
-            'Activity Completed!',
-            'You clicked the button!',
-            'success'
-          )
+        toast(`Activity Completed`);
     }
 
     //total planting time
@@ -81,6 +78,8 @@ const Details = ({totalTime}) => {
                     <span className='text-slate-500 font-semibold'>{addBreak} Min</span>
                 </div>
                 <button onClick={addToast} className="w-full rounded-lg py-3 font-semibold text-white bg-[#5D5FEF] border-none mt-4">Activity Completed</button>
+                <ToastContainer />
+     
             </div>
     );
 };
