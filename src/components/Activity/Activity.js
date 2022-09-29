@@ -1,4 +1,4 @@
-import { faFolderTree, faPlantWilt, faSunPlantWilt, faTree, faTreeCity } from '@fortawesome/free-solid-svg-icons';
+import { faTree} from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import React from 'react';
 

@@ -2,9 +2,9 @@ import React from 'react';
 
 const Blog = () => {
     return (
-        <div>
+    <div>
         <h3 className='pb-4 border-b-4 border-[#5D5FEF] w-3/12 m-auto text-center text-3xl mt-4 sm:mt-10 font-semibold'>Blog</h3>
-            <div className='w-10/12 lg:w-7/12 m-auto p-3 my-10 border rounded-lg'>
+        <div className='w-10/12 lg:w-7/12 m-auto p-3 my-10 border rounded-lg'>
             <div tabIndex={0} className="collapse collapse-arrow border border-base-300 bg-base-100 rounded-box">
             <div className="collapse-title text-xl font-medium">
                 How does react work?
@@ -32,7 +32,7 @@ const Blog = () => {
             </div>
             </div>
         </div>
-        </div>
+    </div>
     );
 };
 
